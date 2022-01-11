@@ -39,14 +39,21 @@ static 이 붙은 멤버변수와 메서드, 그리고 초기화 블럭은 인�
 
 ```java
 class Singleton {
+  private static Singleton s = new Singleton(); //######### 이렇게 미리 생성해두어야 한다
   private Singleton(){
     //...
+  }
+  
+  public static Singleton getInstance(){
+    return s;
   }
 }
 ```
 
 이렇게 생성자를 접근을 막은 후에 static 으로 생성자를 만들어 인스턴스가 미리 생성되게 하고,
 staatic으로 인스턴스를 get 하는 메서드를 하나 만드는 식으로 불필요한 인스턴스의 생성을 막을 수 있따. 
+
+예시
 
 ## 제어자의 조합
 
